@@ -1,0 +1,22 @@
+name: Purge jsDelivr on push
+on:
+  push:
+    branches: [ main ]
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: changes
+        uses: tj-actions/changed-files@v45
+        with:
+          files: |
+            js/**
+      - name: Purge changed assets on jsDelivr
+        if: steps.changes.outputs.any_changed == 'true'
+        run: |
+          while IFS= read -r f; do
+            p="${f#./}"
+            echo "Purging $p"
+            curl -sS "https://purge.jsdelivr.net/gh/foreverr-id/dash-assets@main/$p" || true
+          done <<< "${{ steps.changes.outputs.all_changed_files }}"
