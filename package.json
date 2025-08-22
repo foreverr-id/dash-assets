@@ -1,6 +1,6 @@
 {
   "name": "@foreverr/dash-assets",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "Foreverr Invitation dashboard assets",
   "main": "js/app.min.js",
   "files": [
