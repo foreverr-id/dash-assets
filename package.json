@@ -1,0 +1,19 @@
+{
+  "name": "@foreverr-id/dash-assets",
+  "version": "1.0.0",
+  "description": "Foreverr Invitation dashboard assets",
+  "main": "js/app.min.js",
+  "files": [
+    "js",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foreverr-id/dash-assets.git"
+  },
+  "author": "Pandi Right",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
